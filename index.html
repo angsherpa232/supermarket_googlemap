@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+      <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+    <style>
+    #map, #mapPage {
+     height: 100%;
+     width: 100%;
+     padding: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="home">
+        <div data-role="header">
+            <h1>Supermarket finder</h1>
+            <a id="refresh" href="#" data-icon="recycle" class="ui-btn-right">Refresh</a>
+        </div>
+        <div data-role="content">
+            <ul id="market_list" data-role="listview">
+            </ul>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="details">
+        <div data-role="header" data-add-back-btn="true">
+            <h1>Supermarket Details</h1>
+            <a id="market_map" href="#" data-icon="recycle" class="ui-btn-right">Goto Map</a>
+        </div>
+        <div data-role="content">
+            <img id="marketIcon" style="position:relative;"/>
+            <h4 id="marketName" ></h4>
+            <ul data-role="listview" data-inset="true">
+                <li><span id="marketVicinity"></span></li>
+                <li><span id="marketOpen"></span></li>
+                <li><span id="marketIco"></span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="page" id="mapPage">
+      <div data-role="header" data-position="fixed" >
+        <a id="backButton" href="#" data-rel="back"
+            data-transition="slide" data-direction="reverse">Back</a>
+      <h1>Location of a Supermarket</h1>
+    </div>
+    <div id="map" data-role="content"></div>
+    <body>
+   <div data-role="page" id="mapPage" data-theme="a">
+           <div data-role="header" data-position="fixed" data-theme="a">
+
+               <h1>Map</h1>
+           </div>
+
+           <div id="map-content" data-role="content">
+       <div id="map"></div>
+           </div>
+
+       </div>
+   </body>
+    </div>
+</body>
+<script src="supermarket_google.js"></script>
+</html>
